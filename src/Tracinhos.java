@@ -13,10 +13,7 @@ public class Tracinhos implements Cloneable
         for (int i=0;i<qtd;i++){
             texto[i] = '_';
         }
-        
-        // verifica se qtd não é positiva, lançando uma exceção.
-		// instancia this.texto com um vetor com tamanho igual qtd.
-		// preenche this.texto com underlines (_).
+
     }
 
     public void revele (int posicao, char letra) throws Exception
@@ -25,10 +22,7 @@ public class Tracinhos implements Cloneable
             throw new Exception("Posição inválida!");
         }
         this.texto[posicao] = letra;
-        // verifica se posicao é negativa ou então igual ou maior
-		// do que this.texto.length, lançando uma exceção.
-		// armazena a letra fornecida na posicao tambem fornecida
-		// do vetor this.texto
+
     }
 
     public boolean isAindaComTracinhos ()
@@ -41,12 +35,6 @@ public class Tracinhos implements Cloneable
         }
         return false;
         
-        
-        // percorre o vetor de char this.texto e verifica
-        // se o mesmo ainda contem algum underline ou se ja
-        // foram todos substituidos por letras; retornar true
-        // caso ainda reste algum underline, ou false caso
-        // contrario
     }
 
     public String toString ()
@@ -56,17 +44,21 @@ public class Tracinhos implements Cloneable
             caracteres = caracteres + this.texto[i] + " ";
         }
         return caracteres;
-        // retorna um String com TODOS os caracteres que há
-        // no vetor this.texto, intercalados com espaços em
-        // branco
+
     }
+
 
     public boolean equals (Object obj)
     {
-        // verificar se this e obj possuem o mesmo conteúdo, retornando
-        // true no caso afirmativo ou false no caso negativo
+        if (this == obj) return true;
+        if (obj==null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+        Tracinhos comparador = (Tracinhos) obj;
+        if (this.texto != comparador.texto) return false;
+        
+        return true;
     }
-
+    /*
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
@@ -82,4 +74,5 @@ public class Tracinhos implements Cloneable
     {
         // retornar uma copia de this
     }
+*/
 }
