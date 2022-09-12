@@ -6,7 +6,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     public ControladorDeLetrasJaDigitadas ()
     {
         this.letrasJaDigitadas = "";
-        // torna this.letrasJaDigitadas igual ao String vazio
+
     }
 
     public boolean isJaDigitada (char letra)
@@ -17,25 +17,20 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
             }
         }
         return false;
-        // percorrer o String this.letrasJaDigitadas e verificar se ele
-        // possui a letra fornecida, retornando true em caso afirmativo
-        // ou false em caso negativo
+
     }
 
     public void registre (char letra) throws Exception
     {
 		if (isJaDigitada(letra)){
-            throw new Exception("Letra já digitada")
+            throw new Exception("Letra já digitada");
         }
         else{
             this.letrasJaDigitadas = this.letrasJaDigitadas + letra;
         }
-        // verifica se a letra fornecida ja foi digitada (pode usar
-		// o método this.isJaDigitada, para isso), lancando uma exceção
-		// em caso afirmativo.
-		// concatena a letra fornecida a this.letrasJaDigitadas.
     }
-
+    
+    @Override
     public String toString ()
     {
         String letras = "";
@@ -48,15 +43,21 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         return letras;
         
 
-        // retorna um String com TODAS as letras presentes em
-		// this.letrasJaDigitadas separadas por vírgula (,).
     }
 
+    @Override
     public boolean equals (Object obj)
     {
-        // verificar se this e obj são iguais
-    }
+        if (this == obj) return true;
+        if (obj==null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+        ControladorDeLetrasJaDigitadas comparador = (ControladorDeLetrasJaDigitadas) obj;
+        if (this.letrasJaDigitadas != comparador.letrasJaDigitadas) return false;
+        
+        return true;
 
+    }
+/* 
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
@@ -73,4 +74,6 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
     {
         // criar uma cópia do this com o construtor de cópia e retornar
     }
+*/
 }
+
