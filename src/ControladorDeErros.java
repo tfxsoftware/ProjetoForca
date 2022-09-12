@@ -30,11 +30,12 @@ public class ControladorDeErros implements Cloneable
         }
 
     }
-
+    @Override
     public String toString ()
     {
         return this.qtdErr + "/" + this.qtdMax;
     }
+    
     @Override
     public boolean equals (Object obj)
     {

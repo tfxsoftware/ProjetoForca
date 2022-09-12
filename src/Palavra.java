@@ -54,11 +54,13 @@ public class Palavra implements Comparable<Palavra>
         return this.texto.length();
     }
 
+    @Override
     public String toString ()
     {
         return this.texto;
     }
- 
+    
+    @Override
     public boolean equals (Object obj)
     {
         if (this == obj) return true;

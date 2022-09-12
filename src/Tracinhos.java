@@ -36,7 +36,8 @@ public class Tracinhos implements Cloneable
         return false;
         
     }
-
+    
+    @Override
     public String toString ()
     {
         String caracteres = "";
@@ -47,7 +48,7 @@ public class Tracinhos implements Cloneable
 
     }
 
-
+    @Override
     public boolean equals (Object obj)
     {
         if (this == obj) return true;

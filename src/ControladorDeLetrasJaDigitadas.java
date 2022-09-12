@@ -29,7 +29,8 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
             this.letrasJaDigitadas = this.letrasJaDigitadas + letra;
         }
     }
-
+    
+    @Override
     public String toString ()
     {
         String letras = "";
@@ -44,7 +45,7 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
 
     }
 
-  
+    @Override
     public boolean equals (Object obj)
     {
         if (this == obj) return true;
