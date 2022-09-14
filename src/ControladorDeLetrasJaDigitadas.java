@@ -57,12 +57,15 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         return true;
 
     }
-/* 
+
     public int hashCode ()
     {
-        // calcular e retornar o hashcode de this
+        int ret = 123;
+        ret = ret * 7 + new String (this.letrasJaDigitadas).hashCode();
+        if (ret < 0) ret=-ret;
+        return ret;
     }
-
+/* 
     public ControladorDeLetrasJaDigitadas(
     ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
     throws Exception // construtor de cópia

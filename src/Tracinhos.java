@@ -59,12 +59,15 @@ public class Tracinhos implements Cloneable
         
         return true;
     }
-    /*
+
     public int hashCode ()
     {
-        // calcular e retornar o hashcode de this
+        int ret = 123;
+        if (this.texto != null) ret = ret * 7 + this.texto.hashCode();
+        if (ret < 0) ret=-ret;
+        return ret;
     }
-
+/* 
     public Tracinhos (Tracinhos t) throws Exception // construtor de cópia
     {
         // intanciar this.texto um vetor com o mesmo tamanho de t.texto
