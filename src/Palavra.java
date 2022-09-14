@@ -72,12 +72,15 @@ public class Palavra implements Comparable<Palavra>
         return true;
 
     }
-    /*
+
     public int hashCode ()
     {
-        // calcular e retornar o hashcode de this
+        int ret = 123;
+        ret = ret * 7 + new String (this.texto).hashCode();
+        if (ret < 0) ret=-ret;
+        return ret;
     }
-    */
+
     public int compareTo (Palavra palavra)
     {
         return this.texto.compareTo(palavra.texto);
