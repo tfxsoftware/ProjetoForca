@@ -15,19 +15,13 @@ public class ControladorDeErros implements Cloneable
         if (this.qtdErr >= qtdMax){
             throw new Exception("Quantidade máxima de erros antigida!");
         }
-        else{
-            this.qtdErr++;
-        }
+        else this.qtdErr++;
     }
 
     public boolean isAtingidoMaximoDeErros  ()
     {
-        if (this.qtdErr >= qtdMax){
-            return true;
-        }
-        else{
-            return false;
-        }
+        if (this.qtdErr >= qtdMax) return true;
+        else return false;
 
     }
     @Override
