@@ -65,18 +65,25 @@ public class ControladorDeLetrasJaDigitadas implements Cloneable
         if (ret < 0) ret=-ret;
         return ret;
     }
-/* 
+ 
     public ControladorDeLetrasJaDigitadas(
-    ControladorDeLetrasJaDigitadas controladorDeLetrasJaDigitadas)
-    throws Exception // construtor de cópia
+    ControladorDeLetrasJaDigitadas c)
+    throws Exception
     {
-        // copiar c.letrasJaDigitadas em this.letrasJaDigitadas
+        if (c == null) throw new Exception("Erro ao clonar objeto! Clone ausente!");
+        
+        this.letrasJaDigitadas = c.letrasJaDigitadas;
     }
 
     public Object clone ()
     {
-        // criar uma cópia do this com o construtor de cópia e retornar
+        ControladorDeLetrasJaDigitadas novoclone = null;
+    try {   
+        novoclone = new ControladorDeLetrasJaDigitadas(this);
+    } catch (Exception e) {e.printStackTrace();}
+    
+    return novoclone;
     }
-*/
+
 }
 

@@ -2,14 +2,16 @@
 
 public class Tracinhos implements Cloneable
 {
-    private char[] texto ;
+    private char[] texto;
+    private int qtd;
 
     public Tracinhos (int qtd) throws Exception
     {
 		if (qtd <= 0){
             throw new Exception("Quantidade de tracinhos inválida!");
         }
-        this.texto = new char[qtd];
+        this.qtd = qtd;
+        this.texto = new char[this.qtd];
         for (int i=0;i<qtd;i++){
             texto[i] = '_';
         }
@@ -55,7 +57,9 @@ public class Tracinhos implements Cloneable
         if (obj==null) return false;
         if (this.getClass() != obj.getClass()) return false;
         Tracinhos comparador = (Tracinhos) obj;
-        if (this.texto != comparador.texto) return false;
+        for (int i = 0;i<this.qtd;i++){
+            if (this.texto[i] != comparador.texto[i]) return false;
+        }
         
         return true;
     }
@@ -67,19 +71,24 @@ public class Tracinhos implements Cloneable
         if (ret < 0) ret=-ret;
         return ret;
     }
-/* 
-    public Tracinhos (Tracinhos t) throws Exception // construtor de cópia
+ 
+    public Tracinhos (Tracinhos t) throws Exception 
     {
-        // intanciar this.texto um vetor com o mesmo tamanho de t.texto
-        // e copilar o conteúdo de t.texto para this.texto
+        if (t == null) throw new Exception("Erro ao clonar objeto! Clone ausente!");
+        
+        this.texto = t.texto;
+        this.qtd = t.qtd;
+
     }
 
-    public Object clone ()
-    {
-        // retornar uma copia de this
-    }
-*/
+    public Object clone (){
+    Tracinhos novoclone = null;
+    try {   
+        novoclone = new Tracinhos(this);
+    } catch (Exception e) {e.printStackTrace();}
+    
+    return novoclone;
+
+}
 }
 
-
-/////teste
